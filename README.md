@@ -9,3 +9,5 @@ Selain itu huruf ini ber-Translasi bebas di dalam kubus. Ketika menabrak dinding
 Berikut adalah hasil dari tugas ini.
 
 ![Demo](demo.gif)
+
+Buka di azure: http://grafkomc-170082.azurewebsites.net/nama_dalam_kubus/
