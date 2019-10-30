@@ -5,12 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Tugas 2</title>
+  <title>Tugas 3 - Inisial Nama dalam Kubus</title>
 </head>
 
 <body>
-  
-  <canvas id="glcanvas" width="1280" height="600">
+  <canvas id="glcanvas" width="1520" height="480">
     Browser Anda tidak mendukung HTML5 <code>&lt;canvas&gt;</code>.
   </canvas>
 
@@ -23,12 +22,17 @@
   <script name="shader" data-src="fragment.glsl" data-type="fragment" data-version="v1"></script>
   
   <script name="shader" data-src="vertex2.glsl" data-type="vertex" data-version="v2"></script>
-  <!-- <script name="shader" data-src="fragment2.glsl" data-type="fragment" data-version="v2"></script> -->
+  <script name="shader" data-src="fragment2.glsl" data-type="fragment" data-version="v2"></script>
   
+  <h1>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Animasi Inisial dalam Kubus</h1>
+  <h3>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Press X to rotate by x axis&emsp;&emsp;Press Y to rotate by y axis&emsp;&emsp;Press Z to rotate by z axis</h3>
+  <h3>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Press S to stop rotation&emsp;&emsp;&emsp;Press C to continue rotation</h3>
+
 
   <!-- JavaScript pembantu pembaca file eksternal -->
   <script type="text/javascript" src="libs/signals.js"></script>
-  
+  <script type="text/javascript" src="libs/gl-matrix-min.js"></script>
+
   <!-- JavaScript penghubung ke WebGL -->
   <script type="text/javascript" src="libs/glUtils.js"></script>
   
