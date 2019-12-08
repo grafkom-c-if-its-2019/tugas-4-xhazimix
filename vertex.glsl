@@ -2,46 +2,49 @@ precision mediump float;
 
 attribute vec3 vPosition;
 attribute vec3 vColor;
+attribute vec3 vNormal;
+
 varying vec3 fColor;
-uniform vec3 theta;
-uniform mat4 projection;
-uniform mat4 view;
+varying vec3 fPosition;
+varying vec3 fNormal;
+
+uniform mat4 modelMatrix;
+uniform mat4 viewMatrixMatrix;
+uniform mat4 perspectiveMatrix;
+
+uniform mat3 normalMatrix; // Membantu transformasi vektor normal
+
+uniform float scale;
+uniform float middle;
+uniform vec3 bounce;
 
 void main() {
-  fColor = vColor; 
-
-  // geser setiap verteks sejauh 2 unit menjauhi kamera, untuk memastikan seluruh bagian kubus ada di antara near dan far.
-  mat4 translate = mat4(
+  mat4 to_origin = mat4(
     1.0, 0.0, 0.0, 0.0,
     0.0, 1.0, 0.0, 0.0,
     0.0, 0.0, 1.0, 0.0,
-    0.0, 0.0, -2.0, 1.0
+    0.0, 0.0, -2.0, 1.0 
   );
 
-  vec3 angle = radians(theta);
-  vec3 c = cos(angle);
-  vec3 s = sin(angle);
-
-  mat4 rx = mat4(
-    1.0, 0.0, 0.0, 0.0,
-    0.0, c.x, s.x, 0.0,
-    0.0, -s.x, c.x, 0.0,
+  mat4 bounce = mat4(
+    1.0, 0.0, 0.0, bounce.x,
+    0.0, 1.0, 0.0, bounce.y,
+    0.0, 0.0, 1.0, bounce.z,
     0.0, 0.0, 0.0, 1.0
   );
 
-  mat4 ry = mat4(
-    c.y, 0.0, -s.y, 0.0,
+  vec4 middleVec = vec4(middle, 0.0, 0.0, 1.0);
+
+  mat4 skalasi = mat4(
+    scale, 0.0, 0.0, -(middleVec.x) * scale + (middleVec.x),
     0.0, 1.0, 0.0, 0.0,
-    s.y, 0.0, c.y, 0.0,
-    0.0, 0.0, 0.0, 1.0
-  );
-
-  mat4 rz = mat4(
-    c.z, s.z, 0.0, 0.0,
-    -s.z, c.z, 0.0, 0.0,
     0.0, 0.0, 1.0, 0.0,
     0.0, 0.0, 0.0, 1.0
   );
 
-  gl_Position = projection * view * translate * rz * ry * rx * vec4(vPosition, 1.0);
+  gl_Position = perspectiveMatrix * viewMatrix * modelMatrix * vec4(vPosition, 1.0);
+ 
+  fColor = vColor;
+  fPosition = vec3(viewMatrix * modelMatrix * vec4(vPosition, 1.0));
+  fNormal = normalMatrix * vNormal;
 }

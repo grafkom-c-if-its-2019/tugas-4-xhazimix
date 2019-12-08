@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewMatrixport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Tugas 3 - Inisial Nama dalam Kubus</title>
+  <title>Tugas 4 - Kubus Terbuka, Huruf Bercahaya</title>
 </head>
-
+<style>
+  * { margin: 0;padding: 0; }
+  html , body { width: 100%; height: 100%; }
+  canvas{ display: block; }
+</style>
 <body>
-  <canvas id="glcanvas" width="1520" height="480">
+  <canvas id="glcanvas">
     Browser Anda tidak mendukung HTML5 <code>&lt;canvas&gt;</code>.
   </canvas>
-
-  <!-- <canvas id="glcanvas2" width="640" height="480">
-    Browser Anda tidak mendukung HTML5 <code>&lt;canvas&gt;</code>.
-  </canvas> -->
 
   <!-- Shaders -->
   <script name="shader" data-src="vertex.glsl" data-type="vertex" data-version="v1"></script>
   <script name="shader" data-src="fragment.glsl" data-type="fragment" data-version="v1"></script>
-  
   <script name="shader" data-src="vertex2.glsl" data-type="vertex" data-version="v2"></script>
   <script name="shader" data-src="fragment2.glsl" data-type="fragment" data-version="v2"></script>
-  
-  <h1>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Animasi Inisial dalam Kubus</h1>
-  <h3>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Press X to rotate by x axis&emsp;&emsp;Press Y to rotate by y axis&emsp;&emsp;Press Z to rotate by z axis</h3>
-  <h3>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Press S to stop rotation&emsp;&emsp;&emsp;Press C to continue rotation</h3>
 
-
-  <!-- JavaScript pembantu pembaca file eksternal -->
+  <!-- Library untuk men-dispatch methods -->
   <script type="text/javascript" src="libs/signals.js"></script>
+
   <script type="text/javascript" src="libs/gl-matrix-min.js"></script>
 
-  <!-- JavaScript penghubung ke WebGL -->
+  <!-- JavaScript untuk menghubungkan ke WebGL -->
   <script type="text/javascript" src="libs/glUtils.js"></script>
-  
-  <!-- JavaScript utama -->
-  <script type="text/javascript" src="index.js"></script>
 
+  <!-- JavaScript utama kita -->
+  <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
